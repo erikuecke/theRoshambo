@@ -30,7 +30,7 @@ class PlayViewController: UIViewController {
         let randomNumber = randomValue()
         return Choice(rawValue: compChoices[randomNumber])!
     }
-    
+  
     
     // Programmatic presenting view controller.
     
@@ -41,8 +41,21 @@ class PlayViewController: UIViewController {
         
         controller.gamerChoice = Choice.Rock
         controller.compChoice = makeCompChoice()
-        print("\(controller.gamerChoice) \(controller.compChoice)")
+        
+      present(controller, animated: true, completion: nil)
     }
+    
+    // Segue and code
+    
+    @IBAction func paperPlayed(_ sender: Any) {
+        performSegue(withIdentifier: "paperPlay", sender: self)
+        
+        
+    }
+    
+    // Segue Only
+    
+    
     
     
     

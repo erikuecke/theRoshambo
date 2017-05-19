@@ -31,6 +31,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUa-7H-YGE">
                                                 <rect key="frame" x="0.0" y="42" width="293" height="65"/>
                                                 <state key="normal" image="paper"/>
+                                                <connections>
+                                                    <action selector="paperPlayed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yIP-b6-iyF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -47,6 +50,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlG-om-ILV">
                                                 <rect key="frame" x="218" y="42" width="75" height="65"/>
                                                 <state key="normal" image="scissors"/>
+                                                <connections>
+                                                    <segue destination="Axo-Jt-UIg" kind="presentation" identifier="scissorPlay" id="jUK-4n-cos"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -72,6 +78,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="HXb-6R-A2g" secondAttribute="trailing" constant="25" id="i3s-4E-8dX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uny-nH-JQB"/>
+                    <connections>
+                        <segue destination="Axo-Jt-UIg" kind="presentation" identifier="paperPlay" id="MrF-EJ-HGA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +127,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="149"/>
                                                 <state key="normal" title="Play Again"/>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" id="BYv-9n-onz"/>
+                                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backTo" id="zXk-jj-fIP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -149,4 +159,7 @@
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jUK-4n-cos"/>
+    </inferredMetricsTieBreakers>
 </document>

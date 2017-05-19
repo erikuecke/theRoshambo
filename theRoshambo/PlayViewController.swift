@@ -11,56 +11,66 @@ import UIKit
 enum Choice: String {
     case Rock = "Rock"
     case Paper = "Paper"
-    case Scissors = "Scissors"
+    case Scissor = "Scissor"
+    
+    
+
 }
 
 
 
 class PlayViewController: UIViewController {
 
-    // Generate random number 1-3
-    func randomValue() -> Int {
-        let randomvalue = arc4random() % 3
-        return Int(randomvalue)
-    }
-    
+  
     // Generate random Choice for computer
     func makeCompChoice() -> Choice {
-        let compChoices = ["Rock", "Paper", "Scissors"]
-        let randomNumber = randomValue()
+        let compChoices = ["Rock", "Paper", "Scissor"]
+        let randomNumber = Int(arc4random_uniform(3))
         return Choice(rawValue: compChoices[randomNumber])!
     }
-  
     
     // Programmatic presenting view controller.
     
-    @IBAction func rockPlayed(_ sender: Any) {
-        
+    @IBAction func rockPlayed(_ sender: UIButton) {
+
         let controller: ResultsViewController
         controller = storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
-        
-        controller.gamerChoice = Choice.Rock
+        controller.gamerChoice = Choice(rawValue: "Rock")
         controller.compChoice = makeCompChoice()
+        
         
       present(controller, animated: true, completion: nil)
     }
+    
+    
+    // Function to set Gamer and Comp Choice for segues
+    
+    func setGamerCompChoice(segue: UIStoryboardSegue, gChoice: Choice) {
+        let controller = segue.destination as! ResultsViewController
+        controller.gamerChoice = gChoice
+        controller.compChoice = makeCompChoice()
+    }
+    
     
     // Segue and code
     
     @IBAction func paperPlayed(_ sender: Any) {
         performSegue(withIdentifier: "paperPlay", sender: self)
         
-        
     }
     
     // Segue Only
     
     
-    
-    
-    
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "scissorPlay" {
+            setGamerCompChoice(segue: segue, gChoice: .Scissor)
+           
+        } else if segue.identifier == "paperPlay" {
+            setGamerCompChoice(segue: segue, gChoice: .Paper)
+        }
+    }
     
 
 }

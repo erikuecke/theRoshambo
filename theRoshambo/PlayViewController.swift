@@ -12,16 +12,10 @@ enum Choice: String {
     case Rock = "Rock"
     case Paper = "Paper"
     case Scissor = "Scissor"
-    
-    
-
 }
-
-
 
 class PlayViewController: UIViewController {
 
-  
     // Generate random Choice for computer
     func makeCompChoice() -> Choice {
         let compChoices = ["Rock", "Paper", "Scissor"]
@@ -38,8 +32,8 @@ class PlayViewController: UIViewController {
         controller.gamerChoice = Choice(rawValue: "Rock")
         controller.compChoice = makeCompChoice()
         
-        
-      present(controller, animated: true, completion: nil)
+       // Using the UINavigationController programmatically
+      self.navigationController?.pushViewController(controller, animated: true)
     }
     
     

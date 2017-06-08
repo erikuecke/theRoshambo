@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vg1-fi-YTj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="TOb-BC-hAW">
+            <objects>
+                <navigationController id="vg1-fi-YTj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dcj-mR-Ya1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8Kd-IB-U8s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8T-4g-dhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1204" y="104"/>
+        </scene>
         <!--Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -65,7 +81,7 @@
                                                 </constraints>
                                                 <state key="normal" image="scissors"/>
                                                 <connections>
-                                                    <segue destination="Axo-Jt-UIg" kind="presentation" identifier="scissorPlay" id="jUK-4n-cos"/>
+                                                    <segue destination="Axo-Jt-UIg" kind="show" identifier="scissorPlay" id="jUK-4n-cos"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -96,7 +112,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uny-nH-JQB"/>
                     <connections>
-                        <segue destination="Axo-Jt-UIg" kind="presentation" identifier="paperPlay" id="MrF-EJ-HGA"/>
+                        <segue destination="Axo-Jt-UIg" kind="show" identifier="paperPlay" id="MrF-EJ-HGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,21 +132,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a5s-ij-KE1">
-                                <rect key="frame" x="41" y="120" width="293" height="447"/>
+                                <rect key="frame" x="41" y="164" width="293" height="403"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTS-Cn-Jyn">
-                                        <rect key="frame" x="0.0" y="0.0" width="293" height="149"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="134.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperrock" translatesAutoresizingMaskIntoConstraints="NO" id="ALr-nM-zlN">
-                                                <rect key="frame" x="0.0" y="0.0" width="293" height="149"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="134.5"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-Io-dUy">
-                                        <rect key="frame" x="0.0" y="149" width="293" height="149"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="293" height="134"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Covers Rock. You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1s-oo-jl9">
-                                                <rect key="frame" x="0.0" y="0.0" width="293" height="149"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="134"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -138,10 +154,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aL7-Ts-odw">
-                                        <rect key="frame" x="0.0" y="298" width="293" height="149"/>
+                                        <rect key="frame" x="0.0" y="268.5" width="293" height="134.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-uS-DTt">
-                                                <rect key="frame" x="0.0" y="0.0" width="293" height="149"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="134.5"/>
                                                 <state key="normal" title="Play Again"/>
                                                 <connections>
                                                     <action selector="playAgain:" destination="Axo-Jt-UIg" eventType="touchUpInside" id="ISN-kE-4L8"/>
@@ -160,6 +176,7 @@
                             <constraint firstItem="a5s-ij-KE1" firstAttribute="top" secondItem="PPK-5k-sWs" secondAttribute="bottom" constant="100" id="l8z-Vi-pSv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RMo-AU-jl5"/>
                     <connections>
                         <outlet property="resultImage" destination="ALr-nM-zlN" id="A4N-kx-gJN"/>
                         <outlet property="resultLabel" destination="a1s-oo-jl9" id="lGm-YB-kdt"/>
@@ -177,6 +194,6 @@
         <image name="scissors" width="75" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jUK-4n-cos"/>
+        <segue reference="MrF-EJ-HGA"/>
     </inferredMetricsTieBreakers>
 </document>
